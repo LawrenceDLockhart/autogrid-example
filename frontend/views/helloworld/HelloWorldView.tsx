@@ -1,8 +1,9 @@
 import { Button } from '@hilla/react-components/Button.js';
 import { Notification } from '@hilla/react-components/Notification.js';
 import { TextField } from '@hilla/react-components/TextField.js';
-import { HelloWorldService } from 'Frontend/generated/endpoints.js';
+import { GridService } from 'Frontend/generated/endpoints.js';
 import { useState } from 'react';
+import {AutoGrid} from "@hilla/react-crud";
 
 export default function HelloWorldView() {
   const [name, setName] = useState('');
@@ -18,13 +19,14 @@ export default function HelloWorldView() {
         />
         <Button
           onClick={async () => {
-            const serverResponse = await HelloWorldService.sayHello(name);
+            const serverResponse = await GridService.sayHello(name);
             Notification.show(serverResponse);
           }}
         >
           Say hello
         </Button>
       </section>
+        <AutoGrid service={GridService} model={AttendeeModel}/>;
     </>
   );
 }
