@@ -18,7 +18,7 @@ public class DatabaseLoader implements CommandLineRunner {
     Random random = new Random();
     @Override
     public void run(String... strings) throws Exception {
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 1000; i++) {
             String name = dataFactory.getFirstName() + dataFactory.getLastName();
             boolean randomBoolean = random.nextBoolean();
             String email = i + "@example.com";

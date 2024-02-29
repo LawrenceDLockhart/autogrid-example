@@ -9,7 +9,6 @@ public class Attendee {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
-
     private String name;
     private boolean isMember;
     private String email;
